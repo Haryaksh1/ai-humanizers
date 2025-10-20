@@ -1,9 +1,9 @@
 
-name: Feature or Improvement
-about: Suggest a new feature, enhancement, or bug fix
-title: ''
-labels: hacktoberfest, good first issue, python
-assignees: ''
+name: Feature or Improvement  
+about: Suggest a new feature, enhancement, or bug fix    
+title: ''  
+labels: hacktoberfest, good first issue, python  
+assignees: ''  
 ---
 
 ## 📝 Description
