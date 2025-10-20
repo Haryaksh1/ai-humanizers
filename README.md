@@ -1,0 +1,80 @@
+# 🧠 AI Text Humanizer
+
+Welcome to **AI Text Humanizer** — an open-source project featuring two intelligent text rewriters that turn mechanical or AI-generated writing into fluent, natural-sounding language.
+
+## 💡 Overview
+
+This project includes **two unique Python-based humanizers**:
+
+| Humanizer | Description |
+|------------|--------------|
+| 🟢 **Balanced** | Focuses on clarity, grammar, and readability while keeping the tone similar to the input. |
+| 🔴 **Aggressive** | Performs stronger rephrasing and stylistic variation — perfect for making text sound creatively human. |
+
+Both versions leverage modern NLP tools such as **Transformers**, **spaCy**, **TextStat**, and **NLTK** for grammatical and stylistic refinement.
+
+---
+
+## 🚀 Getting Started
+
+### Clone the Repository
+```bash
+git clone https://github.com/<your-username>/AI-Text-Humanizer.git
+cd AI-Text-Humanizer
+```
+### Install Dependencies
+pip install -r requirements.txt
+
+## Tech Stack
+- Python 🐍
+
+- Transformers 🤗
+
+- spaCy
+
+- NLTK
+
+- TextStat
+
+- Scikit-Learn
+
+- Pandas / NumPy
+
+##  🧑‍💻 Contributing
+
+We welcome all kinds of contributions, especially during Hacktoberfest 2025 🎉
+
+How to Contribute
+
+Fork the repo
+
+Create your branch: git checkout -b feature-name
+
+Commit your changes: git commit -m "Add <feature>"
+
+Push to your fork and open a Pull Request
+
+Please open an issue first if you’re working on a new feature.
+
+## 🏷️ Hacktoberfest Participation
+
+This repository is participating in Hacktoberfest 2025.
+Look for issues labelled:
+
+hacktoberfest
+
+good first issue
+
+python
+
+## 🪪 License
+
+This project is licensed under the MIT License
+
+## 🌟 Acknowledgements
+
+The open-source NLP community (spaCy, Hugging Face, TextStat)
+
+All contributors making AI text more human ❤️
+
+
