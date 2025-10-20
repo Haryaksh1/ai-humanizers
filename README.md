@@ -9,7 +9,7 @@ This project includes **two unique Python-based humanizers**:
 | Humanizer | Description |
 |------------|--------------|
 | 🟢 **Balanced** | Focuses on clarity, grammar, and readability while keeping the tone similar to the input. |
-| 🔴 **Aggressive** | Performs stronger rephrasing and stylistic variation — perfect for making text sound creatively human. |
+| 🔴 **Aggressive** | Performs stronger rephrasing and stylistic variation, perfect for making text sound creatively human. |
 
 Both versions leverage modern NLP tools such as **Transformers**, **spaCy**, **TextStat**, and **NLTK** for grammatical and stylistic refinement.
 
