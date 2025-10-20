@@ -17,3 +17,13 @@ git push origin feature-name
 ```
 
 5.Open a Pull Request (PR) and link it to the relevant issue.
+
+### 🧠 Contribution Ideas
+
+Add Streamlit / Gradio frontend  
+
+Create automated evaluation scripts  
+
+Optimize grammar or readability scoring  
+
+Add CLI interface or Flask API  
