@@ -1,6 +1,6 @@
 # 🧠 AI Text Humanizer
 
-Welcome to **AI Text Humanizer** — an open-source project that transforms robotic or AI-generated writing into fluent, natural, human-like text.
+Welcome to **AI Text Humanizer** : an open-source project that transforms robotic or AI-generated writing into fluent, natural, human-like text.
 
 **Goal for Hacktoberfest 2025:** build a full-scale, industry-level humanizer through community contributions. 🚀
 
@@ -10,8 +10,8 @@ Welcome to **AI Text Humanizer** — an open-source project that transforms robo
 
 This project contains two Python humanizers:
 
-- 🟢 **Balanced** — preserves meaning and prioritizes grammar & readability.  
-- 🔴 **Aggressive** — stronger rephrasing and stylistic variation (more creative).
+- 🟢 **Balanced** : preserves meaning and prioritizes grammar & readability.  
+- 🔴 **Aggressive** : stronger rephrasing and stylistic variation (more creative).
 
 Both use modern NLP tools (Transformers, spaCy, TextStat, NLTK) to refine grammar and tone.
 
