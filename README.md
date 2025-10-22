@@ -1,8 +1,8 @@
 # 🧠 AI Text Humanizer
 
-Welcome to **AI Text Humanizer** — an open-source project that transforms robotic, AI-generated writing into fluent, natural, and human-like text.
+Welcome to **AI Text Humanizer** — an open-source project that transforms robotic or AI-generated writing into fluent, natural, human-like text.
 
-Our goal for **Hacktoberfest 2025** is to build a **full-scale, industry-level humanizer**, powered by community contributions. 🚀
+**Goal for Hacktoberfest 2025:** build a full-scale, industry-level humanizer through community contributions. 🚀
 
 ---
 
@@ -50,49 +50,49 @@ We welcome all contributions — small fixes or large features. This repo is beg
 
 ### How to contribute
 
-Fork the repository.  
+- Fork the repository.  
 
-Create a branch: git checkout -b feature-name.  
+- Create a branch: git checkout -b feature-name.  
 
-Commit changes: git commit -m "Add <feature>".  
+- Commit changes: git commit -m "Add <feature>".  
 
-Push and open a pull request.  
+- Push and open a pull request.  
 
 Please open an issue first if you plan to add a new feature (see “How to open a new issue” below).  
 
 ## How to open a new issue
 
-We encourage issues for:  
+We encourage issues for:
 
-New features (UI, new model variant, API)  
+- New features (UI, new model variant, API)
 
-Model improvements (grammar, readability)  
+- Model improvements (grammar, readability)
 
-Bug reports / performance optimizations  
+- Bug reports / performance optimizations
 
-Research & evaluation  
+- Research & evaluation
 
-### Steps
+Steps:
 
-Go to the Issues tab: https://github.com/Haryaksh1/AI-Text-Humanizer/issues  
+1.Go to the Issues tab: https://github.com/Haryaksh1/AI-Text-Humanizer/issues
 
-Click New issue.  
+2.Click New issue.
 
-Use the template (title, short description, steps/files changed).  
+3.Use the template (title, short description, steps/files changed).
 
-Add labels: hacktoberfest, good first issue, python (you can pick them on the right).  
+4.Add labels: hacktoberfest, good first issue, python (you can pick them on the right).
 
-Comment “I’d like to work on this” and wait to be assigned.  
+5.Comment “I’d like to work on this” and wait to be assigned.
 
 ## Hacktoberfest 2025
 
 This repo participates in Hacktoberfest 2025. Look for issues labelled:  
 
-hacktoberfest  
+- hacktoberfest  
 
-good first issue  
+- good first issue  
 
-python  
+- python  
 
 If your PR is merged or marked hacktoberfest-accepted by a maintainer, it will count.  
 
