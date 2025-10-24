@@ -1,4 +1,3 @@
-text
 transformers
 datasets
 spacy
@@ -19,3 +18,4 @@ holidays
 flask
 flask-cors
 argparse
+language-tool-python
