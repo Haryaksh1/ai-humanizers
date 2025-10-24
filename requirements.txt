@@ -16,3 +16,7 @@ huggingface_hub
 requests
 holidays
 import-ipynb
+flask
+flask-cors
+argparse
+language-tool-python

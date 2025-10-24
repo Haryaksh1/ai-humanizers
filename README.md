@@ -25,8 +25,135 @@ git clone https://github.com/Haryaksh1/AI-Text-Humanizer.git
 cd AI-Text-Humanizer
 ```
 2. Install dependencies:
-```
+```bash
 pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+```
+
+## CLI Usage
+
+The CLI provides a simple command-line interface for humanizing text:
+
+### Basic Usage
+```bash
+# Humanize text directly
+python cli/humanize_cli.py --model balanced --input "Furthermore, it is important to note that artificial intelligence is transforming industries."
+
+# Use aggressive model for stronger rephrasing
+python cli/humanize_cli.py --model aggressive --input "Moreover, the comprehensive analysis demonstrates significant improvements."
+
+# Save output to file
+python cli/humanize_cli.py --model balanced --input "Your AI text here" --output humanized.txt
+
+# Process text from file
+python cli/humanize_cli.py --model aggressive --file input.txt --output output.txt
+
+# Show detailed statistics
+python cli/humanize_cli.py --model balanced --input "Your text" --stats
+```
+
+### CLI Options
+- `--model`: Choose humanizer model (`balanced` or `aggressive`)
+  - **balanced**: Preserves meaning, focuses on readability
+  - **aggressive**: Stronger rephrasing, more creative transformations
+- `--input`: Input text to humanize (use quotes for multi-word text)
+- `--file`: Input file containing text to humanize
+- `--output`: Output file to save humanized text (optional, prints to stdout if not specified)
+- `--stats`: Show humanization statistics and metrics
+- `--quiet`: Suppress progress messages
+
+## API Usage
+
+The Flask API provides RESTful endpoints for integrating humanizers into other applications:
+
+### Starting the API Server
+```bash
+python api/app.py
+```
+The API will be available at `http://localhost:5000`
+
+### API Endpoints
+
+#### POST /humanize
+Humanize AI-generated text using balanced or aggressive models.
+
+**Request:**
+```json
+{
+  "model": "balanced",
+  "text": "Furthermore, it is important to note that artificial intelligence is transforming industries.",
+  "include_stats": true
+}
+```
+
+**Response:**
+```json
+{
+  "humanized_text": "Also, AI is really changing industries in a big way.",
+  "model_used": "balanced",
+  "processing_time": 0.234,
+  "success": true,
+  "stats": {
+    "initial_ai_score": 2.1,
+    "final_ai_score": 0.3,
+    "improvement_percentage": 85.7,
+    "target_achieved": true,
+    "input_length": 89,
+    "output_length": 52,
+    "quality_metrics": {
+      "overall_quality": 78.5,
+      "readability_score": 82.3,
+      "grade_level": 8.2
+    }
+  }
+}
+```
+
+#### GET /health
+Health check endpoint.
+
+**Response:**
+```json
+{
+  "status": "healthy",
+  "timestamp": "2025-01-22 14:30:15",
+  "service": "AI Text Humanizer API"
+}
+```
+
+#### GET /
+API documentation with examples and endpoint details.
+
+### cURL Examples
+```bash
+# Basic humanization
+curl -X POST http://localhost:5000/humanize \
+  -H "Content-Type: application/json" \
+  -d '{"model": "balanced", "text": "Furthermore, it is important to note that..."}'
+
+# With statistics
+curl -X POST http://localhost:5000/humanize \
+  -H "Content-Type: application/json" \
+  -d '{"model": "aggressive", "text": "Moreover, the comprehensive analysis demonstrates...", "include_stats": true}'
+
+# Health check
+curl http://localhost:5000/health
+```
+
+### Python Integration Example
+```python
+import requests
+
+# Humanize text via API
+response = requests.post('http://localhost:5000/humanize', json={
+    'model': 'balanced',
+    'text': 'Your AI-generated text here',
+    'include_stats': True
+})
+
+result = response.json()
+print("Humanized:", result['humanized_text'])
+print("Improvement:", result['stats']['improvement_percentage'], "%")
 ```
 ## Tech stack
 
