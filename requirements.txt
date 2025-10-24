@@ -15,4 +15,7 @@ tokenizers
 huggingface_hub
 requests
 holidays
+flask
+flask-cors
+argparse
 language-tool-python
