@@ -6,32 +6,27 @@ from nltk.translate.bleu_score import sentence_bleu
 from nltk.tokenize import word_tokenize
 import nltk
 
-# Use the import-ipynb library to allow importing from .ipynb files
-try:
-    import import_ipynb
-except ImportError:
-    print("Error: 'import-ipynb' is not installed. Please run 'pip install import-ipynb' in your terminal.")
-    sys.exit(1)
+# Dynamically determine the project root directory (the parent of the 'evaluation' folder)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(script_dir)
 
-# Add the project root to the Python path to allow importing the notebooks
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
-# Now, import the classes directly from your .ipynb files
+# Now, import the classes directly from the converted .py files
 try:
     from humanizer_balanced import AdvancedAITextHumanizer
     from humanizer_aggressive import UltraAggressiveHumanizer
 except ImportError as e:
-    print(f"Error importing from notebook files: {e}")
-    print("Please ensure 'humanizer_balanced.ipynb' and 'humanizer_aggressive.ipynb' exist in the root directory.")
+    print(f"Error importing from .py files: {e}")
+    print("Please ensure you have converted the notebooks to .py files using 'jupyter nbconvert --to script <notebook_name>.ipynb'")
     sys.exit(1)
 
 
 # Ensure NLTK data is downloaded
 try:
     nltk.data.find('tokenizers/punkt')
-except nltk.downloader.DownloadError:
+except LookupError:
     nltk.download('punkt')
 
 def calculate_metrics(original_text, humanized_text):
@@ -65,6 +60,9 @@ def run_evaluation():
     CSV_OUTPUT_FILE = os.path.join(OUTPUT_DIR, "evaluation_results.csv")
     MD_OUTPUT_FILE = os.path.join(OUTPUT_DIR, "evaluation_results.md")
 
+    # Ensure output directory exists
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
     # --- Load Sample Texts ---
     try:
         with open(SAMPLE_FILE, 'r', encoding='utf-8') as f:
@@ -79,7 +77,6 @@ def run_evaluation():
     # --- Initialize Humanizers ---
     # Set load_datasets=False to speed up initialization for evaluation
     print("\nInitializing humanizers (datasets loading is disabled for speed)...")
-    # Note: The print statements from the notebooks will appear here during initialization
     balanced_humanizer = AdvancedAITextHumanizer(load_datasets=False)
     aggressive_humanizer = UltraAggressiveHumanizer(load_datasets=False)
     
@@ -141,6 +138,4 @@ def run_evaluation():
 
 
 if __name__ == "__main__":
-    # To run this script, you will also need to install textstat and nltk:
-    # pip install textstat nltk
     run_evaluation()
